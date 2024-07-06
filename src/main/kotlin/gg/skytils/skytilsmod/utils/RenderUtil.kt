@@ -165,6 +165,8 @@ object RenderUtil {
         UGraphics.enableBlend()
         UGraphics.disableLighting()
         UGraphics.tryBlendFuncSeparate(770, 771, 1, 0)
+        GlStateManager.disableDepth()  // Disable depth testing
+
         val wr = UGraphics.getFromTessellator()
         wr.beginWithDefaultShader(UGraphics.DrawMode.QUADS, DefaultVertexFormats.POSITION_COLOR)
         val adjustedAlpha = (c.alpha * alphaMultiplier).toInt().coerceAtMost(255)
@@ -226,9 +228,11 @@ object RenderUtil {
         }
 
         wr.drawDirect()
+        GlStateManager.enableDepth()  // Re-enable depth testing
         UGraphics.disableBlend()
         UGraphics.enableLighting()
     }
+
 
     /**
      * @author Mojang
@@ -246,15 +250,18 @@ object RenderUtil {
         GlStateManager.disableLighting()
         GlStateManager.disableAlpha()
         GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0)
+        GlStateManager.disableDepth()  // Disable depth testing
         GL11.glLineWidth(width)
         RenderGlobal.drawOutlinedBoundingBox(aabb, color.red, color.green, color.blue, color.alpha)
         GlStateManager.translate(realX, realY, realZ)
+        GlStateManager.enableDepth()  // Re-enable depth testing
         GlStateManager.disableBlend()
         GlStateManager.enableAlpha()
         GlStateManager.enableTexture2D()
         GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f)
         GlStateManager.popMatrix()
     }
+
 
     /**
      * Taken from Skyblockcatia under MIT License
@@ -429,6 +436,7 @@ object RenderUtil {
         UGraphics.disableLighting()
         UGraphics.depthMask(false)
         UGraphics.enableBlend()
+        GlStateManager.disableDepth()  // Disable depth testing
         UGraphics.tryBlendFuncSeparate(770, 771, 1, 0)
         if (background) {
             val worldRenderer = UGraphics.getFromTessellator()
@@ -450,6 +458,7 @@ object RenderUtil {
             scale,
             shadow
         )
+        GlStateManager.enableDepth()  // Re-enable depth testing
         UGraphics.depthMask(true)
         matrixStack.pop()
     }
@@ -818,7 +827,6 @@ object RenderUtil {
         UGraphics.depthMask(false)
         UGraphics.tryBlendFuncSeparate(0, 769, 1, 0)
 
-        // Changing the alpha doesn't affect the vignette, so we have to use the alpha to change the color values
         UGraphics.color4f(
             (1f - (color.red / 255f)) * (color.alpha / 255f),
             (1f - (color.green / 255f)) * (color.alpha / 255f),
