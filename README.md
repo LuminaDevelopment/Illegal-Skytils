@@ -19,9 +19,9 @@
 **to open the Skytils you can run  the following command: (result will be the same)**
 > /ist
 
-> /illegalskytils
+> /st
 
-**❗/skytils** & **/st** will not work!❗**
+**❗/skytils** will not work!❗**
 
 if you need to run any other skytils command like _**/stping**_ simply use _**/st**_ and not _**/ist**_
 
