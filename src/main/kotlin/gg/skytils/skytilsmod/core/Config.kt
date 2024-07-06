@@ -48,7 +48,7 @@ import java.net.URI
 
 object Config : Vigilant(
     File("./config/skytils/config.toml"),
-    (if (Utils.isBSMod) "BSMod" else "Skytils") + " (${Reference.VERSION})",
+    (if (Utils.isBSMod) "BSMod" else "Illegal Skytils") + " (${Reference.VERSION})",
     sortingBehavior = ConfigSorting
 ) {
     @Property(
