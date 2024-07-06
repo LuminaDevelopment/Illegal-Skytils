@@ -49,10 +49,10 @@ class OptionsGui(val parent: GuiScreen? = null) :
     WindowScreen(ElementaVersion.V2, newGuiScale = EssentialAPI.getGuiUtil().getGuiScale()) {
 
     private val skytilsText: UIText =
-        UIText(if (Utils.isBSMod) "BSMod${"+".toStringIfTrue(SkytilsPlus.redeemed)}" else "Skytils", shadow = false).childOf(window).constrain {
+        UIText(if (Utils.isBSMod) "BSMod${"+".toStringIfTrue(SkytilsPlus.redeemed)}" else "Illegal Skytils", shadow = false).childOf(window).constrain {
             x = CenterConstraint()
             y = RelativeConstraint(0.075f)
-            textScale = basicTextScaleConstraint { window.getHeight() / 40 }
+            textScale = basicTextScaleConstraint { window.getHeight() / 120 }
         }
 
     private var orderIndex = 0
@@ -206,7 +206,7 @@ class OptionsGui(val parent: GuiScreen? = null) :
 
     private fun animate() {
         skytilsText.animate {
-            setColorAnimation(Animations.IN_OUT_SIN, 1f, RainbowColorConstraint())
+            setColorAnimation(Animations.IN_OUT_SIN, 5f, RainbowColorConstraint())
                 .onComplete {
                     animate()
                 }
