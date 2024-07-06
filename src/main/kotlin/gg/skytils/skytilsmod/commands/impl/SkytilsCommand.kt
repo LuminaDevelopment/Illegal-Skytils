@@ -67,7 +67,7 @@ import java.time.ZonedDateTime
 import java.util.*
 import kotlin.collections.set
 
-object SkytilsCommand : BaseCommand("skytils", listOf("st")) {
+object SkytilsCommand : BaseCommand("st", listOf("ist")) {
     override fun processCommand(player: EntityPlayerSP, args: Array<String>) {
         if (args.isEmpty()) {
             Skytils.displayScreen = OptionsGui()
