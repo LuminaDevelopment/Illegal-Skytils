@@ -21,7 +21,7 @@
 
 > /illegalskytils
 
-**❗/skytils** / **/st** will not work!❗**
+**❗/skytils** & **/st** will not work!❗**
 
 if you need to run any other skytils command like _**/stping**_ simply use _**/st**_ and not _**/ist**_
 
