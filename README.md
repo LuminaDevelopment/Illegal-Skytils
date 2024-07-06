@@ -36,5 +36,5 @@ if you need to run any other skytils command like _**/stping**_ simply use _**/s
       - i hope you know how to (and im not going to explain it)
 
 2. **Uninstall Old Skytils**
-      - head to your mods folder and uninstall replace the normal skytils with illegal skytils (see releases)
+      - head to your mods folder and replace the normal skytils with illegal skytils (see releases)
       > note that Illegal skyblock has all the same features of normal skytils so no need to keep the old skytils
