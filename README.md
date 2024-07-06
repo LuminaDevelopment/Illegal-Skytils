@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <h1 style="font-size: 48px; background: -webkit-linear-gradient(#ff0000, #6c0000); -webkit-background-clip: text; color: transparent;">
+  <h1 style="font-size: 70px; background: -webkit-linear-gradient(#ff0000, #6c0000); -webkit-background-clip: text; color: transparent;">
     Illegal Skytils
   </h1>
   <br>
